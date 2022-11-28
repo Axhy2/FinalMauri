@@ -1,5 +1,16 @@
 ﻿Public Class frmPresupuestos
     Dim join As String = "propietarios"
+    Public Function GetDateInYYYYMMDD(dt As String) As String
+        'Thx so much User-995741658! c: from https://social.msdn.microsoft.com/Forums/en-US/dc97a42b-a591-49ee-be26-4406636a7261/date-conversion-from-ddmmyyyy-to-yyyymmdd?forum=aspgettingstarted
+        Dim str(2) As String
+        str = dt.Split("/")
+        Dim tempdt As String = String.Empty
+        For i As Integer = 2 To 0 Step -1
+            tempdt += str(i) + "-"
+        Next
+        tempdt = tempdt.Substring(0, 10)
+        Return tempdt
+    End Function
     Private Sub frmPropietarios_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Width = 352
 
@@ -27,7 +38,7 @@
         If (txtboxDesc.Text <> "") Then
             query_create = $"
              insert into {dgv}(patente,id_propietario,desc_presupuesto,fecha_ingreso,fecha_prometida,dias_atraso,importe_total)
-             values({txtboxPatente.Text},{txtboxID_Propietario.Text},'{txtboxDesc.Text}','{datepicker.Text}','{datepicker2.Text}',{txtboxAtraso.Text},{txtboxImp.Text.Replace(",", ".")})"
+             values({txtboxPatente.Text},{txtboxID_Propietario.Text},'{txtboxDesc.Text}','{GetDateInYYYYMMDD(datepicker.Text)}','{GetDateInYYYYMMDD(datepicker2.Text)}',{txtboxAtraso.Text},{txtboxImp.Text.Replace(",", ".")})"
             crear(query_create, query_read, dgvPresupuestos)
             Me.Width = 352
             borrartxtbox(Me)
@@ -54,8 +65,8 @@
     Private Sub btn_update_proprietarios_Click(sender As Object, e As EventArgs) Handles btn_update.Click
         query_update = $"
             Update {dgv}
-            SET importe_total={txtboxImp.Text},id_propietario={txtboxID_Propietario.Text},dias_atraso={txtboxAtraso.Text},fecha_ingreso='{datepicker.Text}',fecha_prometida='{datepicker2.Text}',patente='{txtboxPatente.Text}'
-            WHERE patente = {dgvPresupuestos.CurrentRow.Cells(0).Value};"
+            SET desc_presupuesto='{txtboxDesc.Text}',importe_total={txtboxImp.Text.Replace(",", ".")},id_propietario={txtboxID_Propietario.Text},dias_atraso={txtboxAtraso.Text},fecha_ingreso='{GetDateInYYYYMMDD(datepicker.Text)}',fecha_prometida='{GetDateInYYYYMMDD(datepicker2.Text)}',patente='{txtboxPatente.Text}'
+            WHERE id_presupuesto = {dgvPresupuestos.CurrentRow.Cells(0).Value};"
         'Inicio update
         If (lblID.Text <> "Código") Then
             actualizar(query_update, query_read, dgvPresupuestos)
@@ -69,16 +80,6 @@
         End If
     End Sub
 
-
-
-
-
-
-
-
-    Private Sub lblMarca_Click(sender As Object, e As EventArgs) Handles lblMarca.Click
-
-    End Sub
 
     Private Sub dgvPresupuestos_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvPresupuestos.CellClick
         If dgvPresupuestos.RowCount <> 0 Then
@@ -121,4 +122,25 @@
     End Sub
 
 
+
+
+    Private Sub dgvPresupuestos_SelectionChanged(sender As Object, e As EventArgs) Handles dgvPresupuestos.SelectionChanged
+        If wfrm = 1 Then
+            Dim frm As frmPresupuestos_Repuestos = CType(Owner, frmPresupuestos_Repuestos)
+            frm.txtbox1.Text = $"{dgvPresupuestos.CurrentRow.Cells(0).Value}"
+        End If
+    End Sub
+
+    Private Sub dgvPresupuestos_KeyDown(sender As Object, e As KeyEventArgs) Handles dgvPresupuestos.KeyDown
+        If wfrm = 1 Then
+            wfrm = 0
+            query_read = $"
+                 SELECT id_presupuesto,r.id_repuesto,r.importe ,r.desc_repuesto as [Nombre repuesto], cant_repuestos as Cantidad,importe_final as [Importe total]
+                FROM presupuestos as pr
+                INNER JOIN repuestos as r
+                ON  pr.id_repuesto=r.id_repuesto"
+            Me.Close()
+
+        End If
+    End Sub
 End Class

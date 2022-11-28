@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmPresupuestos
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class frmPresupuestos
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtboxEgreso = New System.Windows.Forms.TextBox()
@@ -49,11 +49,11 @@ Partial Class frmPresupuestos
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.datepicker2 = New System.Windows.Forms.DateTimePicker()
         Me.datepicker = New System.Windows.Forms.DateTimePicker()
+        Me.lblConfirmacion2 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtboxDesc = New System.Windows.Forms.TextBox()
         Me.txtboxID_Propietario = New System.Windows.Forms.TextBox()
-        Me.lblConfirmacion2 = New System.Windows.Forms.Label()
         CType(Me.dgvPresupuestos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -326,6 +326,16 @@ Partial Class frmPresupuestos
         Me.datepicker.Size = New System.Drawing.Size(100, 20)
         Me.datepicker.TabIndex = 26
         '
+        'lblConfirmacion2
+        '
+        Me.lblConfirmacion2.AutoSize = True
+        Me.lblConfirmacion2.Location = New System.Drawing.Point(56, 20)
+        Me.lblConfirmacion2.Name = "lblConfirmacion2"
+        Me.lblConfirmacion2.Size = New System.Drawing.Size(19, 13)
+        Me.lblConfirmacion2.TabIndex = 25
+        Me.lblConfirmacion2.Text = "aa"
+        Me.lblConfirmacion2.Visible = False
+        '
         'Label4
         '
         Me.Label4.AutoSize = True
@@ -359,16 +369,6 @@ Partial Class frmPresupuestos
         Me.txtboxID_Propietario.Size = New System.Drawing.Size(100, 20)
         Me.txtboxID_Propietario.TabIndex = 18
         Me.txtboxID_Propietario.Visible = False
-        '
-        'lblConfirmacion2
-        '
-        Me.lblConfirmacion2.AutoSize = True
-        Me.lblConfirmacion2.Location = New System.Drawing.Point(56, 20)
-        Me.lblConfirmacion2.Name = "lblConfirmacion2"
-        Me.lblConfirmacion2.Size = New System.Drawing.Size(19, 13)
-        Me.lblConfirmacion2.TabIndex = 25
-        Me.lblConfirmacion2.Text = "aa"
-        Me.lblConfirmacion2.Visible = False
         '
         'frmPresupuestos
         '

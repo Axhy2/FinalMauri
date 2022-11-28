@@ -33,14 +33,17 @@ Partial Class frmPresupuestos_Repuestos
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.btn_insert = New System.Windows.Forms.Button()
         Me.btn_delete = New System.Windows.Forms.Button()
-        Me.txtbox1 = New System.Windows.Forms.TextBox()
+        Me.txtbox2 = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.txtbox2 = New System.Windows.Forms.TextBox()
+        Me.txtbox3 = New System.Windows.Forms.TextBox()
         Me.lblID = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.txtbox1 = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         CType(Me.dgvPresupuestos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
@@ -115,7 +118,7 @@ Partial Class frmPresupuestos_Repuestos
         'lblConfirmacion
         '
         Me.lblConfirmacion.AutoSize = True
-        Me.lblConfirmacion.Location = New System.Drawing.Point(74, 107)
+        Me.lblConfirmacion.Location = New System.Drawing.Point(141, 111)
         Me.lblConfirmacion.Name = "lblConfirmacion"
         Me.lblConfirmacion.Size = New System.Drawing.Size(19, 13)
         Me.lblConfirmacion.TabIndex = 25
@@ -124,7 +127,7 @@ Partial Class frmPresupuestos_Repuestos
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(74, 68)
+        Me.Label4.Location = New System.Drawing.Point(141, 72)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(53, 13)
         Me.Label4.TabIndex = 24
@@ -159,13 +162,13 @@ Partial Class frmPresupuestos_Repuestos
         Me.btn_delete.Text = "Borrar"
         Me.btn_delete.UseVisualStyleBackColor = True
         '
-        'txtbox1
+        'txtbox2
         '
-        Me.txtbox1.BackColor = System.Drawing.Color.Khaki
-        Me.txtbox1.Location = New System.Drawing.Point(71, 84)
-        Me.txtbox1.Name = "txtbox1"
-        Me.txtbox1.Size = New System.Drawing.Size(100, 20)
-        Me.txtbox1.TabIndex = 18
+        Me.txtbox2.BackColor = System.Drawing.Color.Khaki
+        Me.txtbox2.Location = New System.Drawing.Point(138, 88)
+        Me.txtbox2.Name = "txtbox2"
+        Me.txtbox2.Size = New System.Drawing.Size(100, 20)
+        Me.txtbox2.TabIndex = 18
         '
         'Label2
         '
@@ -185,12 +188,12 @@ Partial Class frmPresupuestos_Repuestos
         Me.Button1.Text = "ABM"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'txtbox2
+        'txtbox3
         '
-        Me.txtbox2.Location = New System.Drawing.Point(71, 145)
-        Me.txtbox2.Name = "txtbox2"
-        Me.txtbox2.Size = New System.Drawing.Size(100, 20)
-        Me.txtbox2.TabIndex = 2
+        Me.txtbox3.Location = New System.Drawing.Point(71, 145)
+        Me.txtbox3.Name = "txtbox3"
+        Me.txtbox3.Size = New System.Drawing.Size(100, 20)
+        Me.txtbox3.TabIndex = 2
         '
         'lblID
         '
@@ -222,12 +225,15 @@ Partial Class frmPresupuestos_Repuestos
         'Panel4
         '
         Me.Panel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(107, Byte), Integer), CType(CType(182, Byte), Integer))
+        Me.Panel4.Controls.Add(Me.Label1)
+        Me.Panel4.Controls.Add(Me.Label3)
+        Me.Panel4.Controls.Add(Me.txtbox1)
         Me.Panel4.Controls.Add(Me.lblConfirmacion)
         Me.Panel4.Controls.Add(Me.Label4)
-        Me.Panel4.Controls.Add(Me.txtbox1)
+        Me.Panel4.Controls.Add(Me.txtbox2)
         Me.Panel4.Controls.Add(Me.Label2)
         Me.Panel4.Controls.Add(Me.Button1)
-        Me.Panel4.Controls.Add(Me.txtbox2)
+        Me.Panel4.Controls.Add(Me.txtbox3)
         Me.Panel4.Controls.Add(Me.lblID)
         Me.Panel4.Controls.Add(Me.Button2)
         Me.Panel4.Controls.Add(Me.Panel5)
@@ -235,6 +241,32 @@ Partial Class frmPresupuestos_Repuestos
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(243, 212)
         Me.Panel4.TabIndex = 26
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(23, 111)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(19, 13)
+        Me.Label1.TabIndex = 28
+        Me.Label1.Text = "aa"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(23, 72)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(66, 13)
+        Me.Label3.TabIndex = 27
+        Me.Label3.Text = "Presupuesto"
+        '
+        'txtbox1
+        '
+        Me.txtbox1.BackColor = System.Drawing.Color.Khaki
+        Me.txtbox1.Location = New System.Drawing.Point(20, 88)
+        Me.txtbox1.Name = "txtbox1"
+        Me.txtbox1.Size = New System.Drawing.Size(100, 20)
+        Me.txtbox1.TabIndex = 26
         '
         'frmPresupuestos_Repuestos
         '
@@ -267,12 +299,15 @@ Partial Class frmPresupuestos_Repuestos
     Friend WithEvents Panel3 As Panel
     Friend WithEvents btn_insert As Button
     Friend WithEvents btn_delete As Button
-    Friend WithEvents txtbox1 As TextBox
+    Friend WithEvents txtbox2 As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Button1 As Button
-    Friend WithEvents txtbox2 As TextBox
+    Friend WithEvents txtbox3 As TextBox
     Friend WithEvents lblID As Label
     Friend WithEvents Button2 As Button
     Friend WithEvents Panel5 As Panel
     Friend WithEvents Panel4 As Panel
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents txtbox1 As TextBox
 End Class

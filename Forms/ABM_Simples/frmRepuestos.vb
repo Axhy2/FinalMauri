@@ -75,7 +75,7 @@ Public Class frmRepuestos
         End If
         If wfrm = 1 And Not IsDBNull(dgvRepuestos.CurrentRow) Then
             Dim frm As frmPresupuestos_Repuestos = CType(Owner, frmPresupuestos_Repuestos)
-            frm.txtbox1.Text = dgvRepuestos.CurrentRow.Cells(0).Value
+            frm.txtbox2.Text = dgvRepuestos.CurrentRow.Cells(0).Value
             frm.lblConfirmacion.Text = dgvRepuestos.CurrentRow.Cells(1).Value
         End If
     End Sub
@@ -83,9 +83,16 @@ Public Class frmRepuestos
     Private Sub dgvRepuestos_KeyDown(sender As Object, e As KeyEventArgs) Handles dgvRepuestos.KeyDown
         If wfrm = 1 Then
             If e.KeyData = Keys.Enter Then
+                query_read = $"
+                 SELECT id_presupuesto,r.id_repuesto,r.importe ,r.desc_repuesto as [Nombre repuesto], cant_repuestos as Cantidad,importe_final as [Importe total]
+                FROM presupuestos_repuestos as pr
+                INNER JOIN repuestos as r
+                ON  pr.id_repuesto=r.id_repuesto"
                 wfrm = 0
                 Me.Close()
             End If
         End If
     End Sub
+
+
 End Class
