@@ -10,7 +10,7 @@
     ''' </summary>
     ''' 
 
-    Public conexion As New SqlClient.SqlConnection("Data Source=DESKTOP-FFNOTC4; Initial Catalog=FinalMauri2022;Integrated Security=True") 'IZO-> LAB-L03\SQLEXPRESS \\ Casa->DESKTOP-10PSI9B \\ Notebook-> DESKTOP-FFNOTC4
+    Public conexion As New SqlClient.SqlConnection("Data Source=LAB-L03\SQLEXPRESS; Initial Catalog=FinalMauri2022;Integrated Security=True") 'IZO-> LAB-L03\SQLEXPRESS \\ Casa->DESKTOP-10PSI9B \\ Notebook-> DESKTOP-FFNOTC4
     Public cmd As New SqlClient.SqlCommand
     Public dr As SqlClient.SqlDataReader
     Public Sub conectar()

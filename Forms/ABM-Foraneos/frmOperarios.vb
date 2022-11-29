@@ -91,11 +91,11 @@ Public Class frmOperarios
             lblConfirmacion.Text = $"{dgvOperarios.CurrentRow.Cells(3).Value}"
             txtbox_operario_importe_hora.Text = $"{dgvOperarios.CurrentRow.Cells(4).Value}"
 
-            If wfrm = 1 Then
-                    Dim frm As frmPresupuestos_Tareas = CType(Owner, frmPresupuestos_Tareas)
-                frm.txtbox3.Text = dgvOperarios.CurrentRow.Cells(0).Value
+            'If wfrm = 1 Then FK P_T
+            '        Dim frm As frmPresupuestos_Tareas = CType(Owner, frmPresupuestos_Tareas)
+            '    frm.txtbox3.Text = dgvOperarios.CurrentRow.Cells(0).Value
 
-            End If
+            'End If
 
         End If
     End Sub

@@ -31,7 +31,7 @@ Public Class frm_login
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
         desconectar()
-        Cambio(frmPresupuestos_Tareas, Me)
+        'Cambio(frmPresupuestos_Tareas, Me) FK P_T
     End Sub
 
     Private Sub frm_login_Load(sender As Object, e As EventArgs) Handles MyBase.Load

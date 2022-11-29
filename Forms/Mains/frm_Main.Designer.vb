@@ -29,7 +29,7 @@ Partial Class frm_Main
         'cmbox_Entry
         '
         Me.cmbox_Entry.FormattingEnabled = True
-        Me.cmbox_Entry.Items.AddRange(New Object() {"Especialidades", "Propietarios", "Repuestos", "Operarios", "Automoviles", "Presupuestos", "Presupuestos__Tareas", "Presupuestos__Repuestos", "Tareas"})
+        Me.cmbox_Entry.Items.AddRange(New Object() {"Especialidades", "Propietarios", "Repuestos", "Operarios", "Automoviles", "Presupuestos", "Presupuestos__Repuestos", "Tareas", "Consultas"})
         Me.cmbox_Entry.Location = New System.Drawing.Point(78, 78)
         Me.cmbox_Entry.Name = "cmbox_Entry"
         Me.cmbox_Entry.Size = New System.Drawing.Size(121, 21)

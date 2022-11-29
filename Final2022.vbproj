@@ -113,12 +113,6 @@
     <Compile Include="Forms\ABM-Foraneos\frmPresupuestos_Repuestos.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ABM-Foraneos\frmPresupuestos_Tareas.Designer.vb">
-      <DependentUpon>frmPresupuestos_Tareas.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\ABM-Foraneos\frmPresupuestos_Tareas.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Forms\ABM_Simples\frmEspecialidades.Designer.vb">
       <DependentUpon>frmEspecialidades.vb</DependentUpon>
     </Compile>
@@ -141,6 +135,12 @@
       <DependentUpon>frmTareas.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\ABM-Foraneos\frmTareas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Mains\frmConsultas.Designer.vb">
+      <DependentUpon>frmConsultas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Mains\frmConsultas.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Mains\frm_login.vb">
@@ -187,9 +187,6 @@
     <EmbeddedResource Include="Forms\ABM-Foraneos\frmPresupuestos_Repuestos.resx">
       <DependentUpon>frmPresupuestos_Repuestos.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ABM-Foraneos\frmPresupuestos_Tareas.resx">
-      <DependentUpon>frmPresupuestos_Tareas.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ABM_Simples\frmEspecialidades.resx">
       <DependentUpon>frmEspecialidades.vb</DependentUpon>
     </EmbeddedResource>
@@ -201,6 +198,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ABM-Foraneos\frmTareas.resx">
       <DependentUpon>frmTareas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Mains\frmConsultas.resx">
+      <DependentUpon>frmConsultas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Mains\frm_login.resx">
       <DependentUpon>frm_login.vb</DependentUpon>

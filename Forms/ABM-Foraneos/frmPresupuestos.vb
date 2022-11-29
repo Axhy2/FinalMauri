@@ -131,10 +131,10 @@
                 frm.txtbox1.Text = $"{dgvPresupuestos.CurrentRow.Cells(0).Value}"
             End If
 
-            If wfrm = 2 Then
-                Dim frm As frmPresupuestos_Tareas = CType(Owner, frmPresupuestos_Tareas)
-                frm.txtbox1.Text = $"{dgvPresupuestos.CurrentRow.Cells(0).Value}"
-            End If
+            'If wfrm = 2 Then FK P_T
+            '    Dim frm As frmPresupuestos_Tareas = CType(Owner, frmPresupuestos_Tareas)
+            '    frm.txtbox1.Text = $"{dgvPresupuestos.CurrentRow.Cells(0).Value}"
+            'End If
         End If
     End Sub
 

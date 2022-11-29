@@ -15,12 +15,14 @@
                 Cambio(frmAutomoviles, Me)
             Case 5
                 Cambio(frmPresupuestos, Me)
+            'Case 6
+            '    'Cambio(frmPresupuestos_Tareas, Me)
             Case 6
-                Cambio(frmPresupuestos_Tareas, Me)
-            Case 7
                 Cambio(frmPresupuestos_Repuestos, Me)
-            Case 8
+            Case 7
                 Cambio(frmTareas, Me)
+            Case 8
+                Cambio(frmConsultas, Me)
         End Select
     End Sub
 
