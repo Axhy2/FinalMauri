@@ -33,7 +33,7 @@
 				INSERT INTO presupuestos_Repuestos  
 				SELECT  {txtbox1.Text},{txtbox2.Text},{txtbox3.Text}, {txtbox3.Text}*r.importe
 				FROM repuestos as r 
-				where id_repuesto={txtbox2.Text}" ''' Error encontrado ID PRESUPUESTO DEBE ESTAR no es AUTOINCREMENTAL.
+				where id_repuesto={txtbox2.Text}"
             crear(query_create, query_read, dgvPresupuestos)
             Me.Width = 352
             borrartxtbox(Me)

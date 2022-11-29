@@ -16,7 +16,7 @@
             Case 5
                 Cambio(frmPresupuestos, Me)
             Case 6
-                '    Cambio(frmPresupuestos_Tareas, Me)
+                Cambio(frmPresupuestos_Tareas, Me)
             Case 7
                 Cambio(frmPresupuestos_Repuestos, Me)
             Case 8

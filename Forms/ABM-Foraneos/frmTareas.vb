@@ -6,8 +6,8 @@ Public Class frmTareas
 
         query_read = $"
                SELECT id_tarea, esp.desc_esp as Especialidad,desc_tarea as Descripcion,horas_estandar_tarea as [Horas estándar] 
-               FROM {dgv} 
-               INNER JOIN {join} as esp
+               FROM tareas
+               INNER JOIN especialidades as esp
                ON tareas.id_especialidad = esp.id_especialidad"
         llenar(query_read, dgvTareas)
         ocultarID(dgvTareas, 0)
@@ -78,6 +78,7 @@ Public Class frmTareas
             lblID.Text = $"{dgvTareas.CurrentRow.Cells(0).Value}"
             txtboxDesc.Text = $"{dgvTareas.CurrentRow.Cells(2).Value}"
             txtboxHsStdr.Text = $"{dgvTareas.CurrentRow.Cells(3).Value}"
+
         End If
     End Sub
 
@@ -93,5 +94,31 @@ Public Class frmTareas
             End If
         End If
     End Sub
+
+    Private Sub dgvTareas_KeyDown(sender As Object, e As KeyEventArgs) Handles dgvTareas.KeyDown
+        If wfrm = 1 Then
+            wfrm = 0
+            query_read = $"
+                SELECT id_presupuesto,pt.id_tarea,nombre_operario [Nombre operario],t.desc_tarea [Descripción tarea],horas_reales [Horas finales],importe_final [Importe],o.id_especialidad
+				FROM presupuestos_Tareas as pt
+                INNER JOIN tareas as t
+                ON  pt.id_tarea = t.id_tarea
+				INNER JOIN operarios as o
+                ON  pt.id_operario = o.id_operario"
+            Me.Close()
+
+        End If
+    End Sub
+
+    Private Sub dgvTareas_SelectionChanged(sender As Object, e As EventArgs) Handles dgvTareas.SelectionChanged
+        If dgvTareas.RowCount > 0 Then
+            If wfrm = 1 Then
+                Dim frm As frmPresupuestos_Tareas = CType(Owner, frmPresupuestos_Tareas)
+                frm.txtbox2.Text = dgvTareas.CurrentRow.Cells(0).Value
+
+            End If
+        End If
+    End Sub
+
 End Class
 

@@ -6,8 +6,8 @@ Public Class frmOperarios
 
         query_read = $"
                 SELECT id_operario, es.id_especialidad,nombre_operario as Operario,es.desc_esp as Especialidad,importe_hora as [Importe x hora]
-                FROM {dgv} as op
-                INNER JOIN {join} as es
+                FROM operarios as op
+                INNER JOIN especialidades as es
                 ON op.id_especialidad = es.id_especialidad;"
         llenar(query_read, dgvOperarios)
         ocultarID(dgvOperarios, 0)
@@ -90,6 +90,27 @@ Public Class frmOperarios
             txtbox_nombre_operario.Text = $"{dgvOperarios.CurrentRow.Cells(2).Value}"
             lblConfirmacion.Text = $"{dgvOperarios.CurrentRow.Cells(3).Value}"
             txtbox_operario_importe_hora.Text = $"{dgvOperarios.CurrentRow.Cells(4).Value}"
+
+            If wfrm = 1 Then
+                    Dim frm As frmPresupuestos_Tareas = CType(Owner, frmPresupuestos_Tareas)
+                frm.txtbox3.Text = dgvOperarios.CurrentRow.Cells(0).Value
+
+            End If
+
+        End If
+    End Sub
+
+    Private Sub dgvOperarios_KeyDown(sender As Object, e As KeyEventArgs) Handles dgvOperarios.KeyDown
+        If wfrm = 1 Then
+            wfrm = 0
+            query_read = $"
+                SELECT id_presupuesto,pt.id_tarea,nombre_operario [Nombre operario],t.desc_tarea [Descripción tarea],horas_reales [Horas finales],importe_final [Importe],o.id_especialidad
+				FROM presupuestos_Tareas as pt
+                INNER JOIN tareas as t
+                ON  pt.id_tarea = t.id_tarea
+				INNER JOIN operarios as o
+                ON  pt.id_operario = o.id_operario"
+            Me.Close()
 
         End If
     End Sub
